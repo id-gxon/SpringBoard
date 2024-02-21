@@ -7,6 +7,24 @@
 # View
 	뷰 페이지 형태 설정
 
+	# 컨트롤러 설계 #
+		- 공통적인 URI의 경로 / 각 기능별 URI 경로
+		- 각 URI의 호출 방법(GET/POST)
+		- 각 기능별 결과 처리(View 출력, Redirect)
+		- 예외 페이지
+		
+		= 컨트롤러를 구분하는 기준은 도메인 객체(DB Table)
+		
+		* 공통 URI	: /board or /boards
+		* 호출 방식	: GET - 사용자 정보 입력, 조회, 출력
+					  POST - 데이터를 처리(insert, update, delete)
+		* 기능별 URI: 글쓰기GET - /board/register
+					  글쓰기POST - /board/register
+					  리스트GET - /board/list
+					  본문읽기GET - /board/read?bno=000
+					  본문수정GET - /board/modify?bno=000
+					  본문수정POST - /board/modify
+					  본문삭제POST - /board/remove?bno=000
 
 * p.83
 	커넥션 풀: DB 연결 정보를 미리 생성 / 대여
