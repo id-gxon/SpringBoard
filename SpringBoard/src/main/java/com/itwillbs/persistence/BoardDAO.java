@@ -1,5 +1,7 @@
 package com.itwillbs.persistence;
 
+import java.util.List;
+
 import com.itwillbs.domain.BoardVO;
 
 /**
@@ -12,4 +14,6 @@ public interface BoardDAO {
 	// register
 	public void boardCreate(BoardVO vo) throws Exception;
 
+	// list
+	public List<BoardVO> boardListSelect() throws Exception;
 }

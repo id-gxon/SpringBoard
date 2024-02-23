@@ -1,5 +1,7 @@
 package com.itwillbs.service;
 
+import java.util.List;
+
 import com.itwillbs.domain.BoardVO;
 
 /**
@@ -12,4 +14,6 @@ public interface BoardService {
 	// register
 	public void regist(BoardVO vo) throws Exception;
 
+	// getList
+	public List<BoardVO> getList() throws Exception;
 }

@@ -1,5 +1,7 @@
 package com.itwillbs.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -24,6 +26,13 @@ public class BoardServiceImpl implements BoardService {
 		bdao.boardCreate(vo);
 
 		logger.debug("Service 동작 완료 -> Controller 이동");
+	}
+
+	@Override
+	public List<BoardVO> getList() throws Exception {
+		logger.debug("list() 실행 -> list Method 호출");
+
+		return bdao.boardListSelect();
 	}
 
 }

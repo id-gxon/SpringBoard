@@ -7,4 +7,8 @@
 	<insert id="createBoard">
 		INSERT INTO tbl_board(title, writer, content) VALUES(#{title}, #{writer}, #{content})
 	</insert>
+
+	<select id="selectBoardList" resultType="BoardVO">
+		Select * FROM tbl_board ORDER BY regdate DESC
+	</select>
 </mapper>

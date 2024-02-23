@@ -35,21 +35,29 @@
 			<!-- Logo -->
 			<a href="/resources/index2.html" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini"><b>A</b>LT</span>
+				<span class="logo-mini">
+					<b>A</b>LT
+				</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>Zerock</b> PROJECT</span>
+				<span class="logo-lg">
+					<b>Zerock</b> PROJECT
+				</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">
 				<!-- Sidebar toggle button-->
 				<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</a>
 				<div class="navbar-custom-menu">
 					<ul class="nav navbar-nav">
 						<!-- Messages: style can be found in dropdown.less-->
 						<li class="dropdown messages-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-envelope-o"></i> <span class="label label-success">4</span>
+								<i class="fa fa-envelope-o"></i>
+								<span class="label label-success">4</span>
 							</a>
 							<ul class="dropdown-menu">
 								<li class="header">You have 4 messages</li>
@@ -110,7 +118,8 @@
 							</ul></li>
 						<!-- Notifications: style can be found in dropdown.less -->
 						<li class="dropdown notifications-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-bell-o"></i> <span class="label label-warning">10</span>
+								<i class="fa fa-bell-o"></i>
+								<span class="label label-warning">10</span>
 							</a>
 							<ul class="dropdown-menu">
 								<li class="header">You have 10 notifications</li>
@@ -139,7 +148,8 @@
 							</ul></li>
 						<!-- Tasks: style can be found in dropdown.less -->
 						<li class="dropdown tasks-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-flag-o"></i> <span class="label label-danger">9</span>
+								<i class="fa fa-flag-o"></i>
+								<span class="label label-danger">9</span>
 							</a>
 							<ul class="dropdown-menu">
 								<li class="header">You have 9 tasks</li>
@@ -204,7 +214,8 @@
 							</ul></li>
 						<!-- User Account: style can be found in dropdown.less -->
 						<li class="dropdown user user-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<img src="/resources/dist/img/user2-160x160.jpg" class="user-image" alt="User Image" /> <span class="hidden-xs">Alexander Pierce</span>
+								<img src="/resources/dist/img/user2-160x160.jpg" class="user-image" alt="User Image" />
+								<span class="hidden-xs">Alexander Pierce</span>
 							</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
@@ -275,18 +286,22 @@
 				<ul class="sidebar-menu">
 					<li class="header">MAIN NAVIGATION</li>
 					<li class="treeview"><a href="#">
-							<i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+							<i class="fa fa-dashboard"></i>
+							<span>Board</span>
+							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
-							<li><a href="/resources/index.html">
-									<i class="fa fa-circle-o"></i> Dashboard v1
+							<li><a href="/board/register">
+									<i class="fa fa-circle-o"></i> Regist
 								</a></li>
-							<li><a href="/resources/index2.html">
-									<i class="fa fa-circle-o"></i> Dashboard v2
+							<li><a href="/board/list">
+									<i class="fa fa-circle-o"></i> List
 								</a></li>
 						</ul></li>
 					<li class="treeview"><a href="#">
-							<i class="fa fa-files-o"></i> <span>Layout Options</span> <span class="label label-primary pull-right">4</span>
+							<i class="fa fa-files-o"></i>
+							<span>Layout Options</span>
+							<span class="label label-primary pull-right">4</span>
 						</a>
 						<ul class="treeview-menu">
 							<li><a href="../layout/top-nav.html">
@@ -303,10 +318,14 @@
 								</a></li>
 						</ul></li>
 					<li><a href="../widgets.html">
-							<i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
+							<i class="fa fa-th"></i>
+							<span>Widgets</span>
+							<small class="label pull-right bg-green">new</small>
 						</a></li>
 					<li class="treeview"><a href="#">
-							<i class="fa fa-pie-chart"></i> <span>Charts</span> <i class="fa fa-angle-left pull-right"></i>
+							<i class="fa fa-pie-chart"></i>
+							<span>Charts</span>
+							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li><a href="../charts/chartjs.html">
@@ -323,7 +342,9 @@
 								</a></li>
 						</ul></li>
 					<li class="treeview"><a href="#">
-							<i class="fa fa-laptop"></i> <span>UI Elements</span> <i class="fa fa-angle-left pull-right"></i>
+							<i class="fa fa-laptop"></i>
+							<span>UI Elements</span>
+							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li><a href="../UI/general.html">
@@ -346,7 +367,9 @@
 								</a></li>
 						</ul></li>
 					<li class="treeview active"><a href="#">
-							<i class="fa fa-edit"></i> <span>Forms</span> <i class="fa fa-angle-left pull-right"></i>
+							<i class="fa fa-edit"></i>
+							<span>Forms</span>
+							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li class="active"><a href="general.html">
@@ -360,7 +383,9 @@
 								</a></li>
 						</ul></li>
 					<li class="treeview"><a href="#">
-							<i class="fa fa-table"></i> <span>Tables</span> <i class="fa fa-angle-left pull-right"></i>
+							<i class="fa fa-table"></i>
+							<span>Tables</span>
+							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li><a href="../tables/simple.html">
@@ -371,13 +396,19 @@
 								</a></li>
 						</ul></li>
 					<li><a href="../calendar.html">
-							<i class="fa fa-calendar"></i> <span>Calendar</span> <small class="label pull-right bg-red">3</small>
+							<i class="fa fa-calendar"></i>
+							<span>Calendar</span>
+							<small class="label pull-right bg-red">3</small>
 						</a></li>
 					<li><a href="../mailbox/mailbox.html">
-							<i class="fa fa-envelope"></i> <span>Mailbox</span> <small class="label pull-right bg-yellow">12</small>
+							<i class="fa fa-envelope"></i>
+							<span>Mailbox</span>
+							<small class="label pull-right bg-yellow">12</small>
 						</a></li>
 					<li class="treeview"><a href="#">
-							<i class="fa fa-folder"></i> <span>Examples</span> <i class="fa fa-angle-left pull-right"></i>
+							<i class="fa fa-folder"></i>
+							<span>Examples</span>
+							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li><a href="../examples/invoice.html">
@@ -403,7 +434,9 @@
 								</a></li>
 						</ul></li>
 					<li class="treeview"><a href="#">
-							<i class="fa fa-share"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i>
+							<i class="fa fa-share"></i>
+							<span>Multilevel</span>
+							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li><a href="#">
@@ -433,17 +466,21 @@
 								</a></li>
 						</ul></li>
 					<li><a href="/resources/documentation/index.html">
-							<i class="fa fa-book"></i> <span>Documentation</span>
+							<i class="fa fa-book"></i>
+							<span>Documentation</span>
 						</a></li>
 					<li class="header">LABELS</li>
 					<li><a href="#">
-							<i class="fa fa-circle-o text-red"></i> <span>Important</span>
+							<i class="fa fa-circle-o text-red"></i>
+							<span>Important</span>
 						</a></li>
 					<li><a href="#">
-							<i class="fa fa-circle-o text-yellow"></i> <span>Warning</span>
+							<i class="fa fa-circle-o text-yellow"></i>
+							<span>Warning</span>
 						</a></li>
 					<li><a href="#">
-							<i class="fa fa-circle-o text-aqua"></i> <span>Information</span>
+							<i class="fa fa-circle-o text-aqua"></i>
+							<span>Information</span>
 						</a></li>
 				</ul>
 			</section>
