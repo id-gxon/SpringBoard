@@ -30,9 +30,16 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<BoardVO> getList() throws Exception {
-		logger.debug("list() 실행 -> list Method 호출");
+		logger.debug("getList() 실행 -> getList Method 호출");
 
 		return bdao.boardListSelect();
+	}
+
+	@Override
+	public BoardVO getBoard(Integer bno) throws Exception {
+		logger.debug("getBoard() 실행 -> getBoard Method 호출");
+
+		return bdao.boardSelect(bno);
 	}
 
 }

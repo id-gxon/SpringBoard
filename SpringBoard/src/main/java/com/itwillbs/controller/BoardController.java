@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.itwillbs.domain.BoardVO;
 import com.itwillbs.service.BoardService;
@@ -58,6 +59,21 @@ public class BoardController {
 
 		// 연결된 뷰에 정보 전달
 		model.addAttribute(boardList);
+	}
+
+	@RequestMapping(value = "/read", method = RequestMethod.GET)
+	public void readGET(Model model, @RequestParam("bno") int bno) throws Exception {
+		logger.debug("/board/read -> readGET() 호출");
+		logger.debug("/board/read.jsp View 연결");
+		
+		// 전달 정보 저장
+		logger.debug("bno:" + bno);
+		
+		// Service -> DAO 게시판 글 조회 가져오기
+		BoardVO bvo = bService.getBoard(bno);
+		
+		// 해당 정보를 저장 -> 연결된 뷰로 전달
+		model.addAttribute(bvo);
 	}
 
 }

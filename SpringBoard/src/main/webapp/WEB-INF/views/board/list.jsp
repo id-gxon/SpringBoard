@@ -24,13 +24,13 @@
 					<c:forEach var="bList" items="${boardVOList }">
 						<tr>
 							<td>${bList.bno }</td>
-							<td>${bList.title }</td>
+							<td><a href="/board/read?bno=${bList.bno }">${bList.title }</a></td>
 							<td>${bList.writer }</td>
 							<td>
 								<span class="badge bg-red">${bList.viewcnt }</span>
 							</td>
 							<td>
-								<fmt:formatDate value="${bList.regdate }" pattern="yy.MM.dd"/>
+								<fmt:formatDate value="${bList.regdate }" pattern="yy.MM.dd" />
 							</td>
 						</tr>
 					</c:forEach>

@@ -11,9 +11,12 @@ import com.itwillbs.domain.BoardVO;
  */
 public interface BoardDAO {
 
-	// register
+	// registerBoard
 	public void boardCreate(BoardVO vo) throws Exception;
 
-	// list
+	// selectBoardList
 	public List<BoardVO> boardListSelect() throws Exception;
+
+	// selectBoard
+	public BoardVO boardSelect(Integer bno) throws Exception;
 }

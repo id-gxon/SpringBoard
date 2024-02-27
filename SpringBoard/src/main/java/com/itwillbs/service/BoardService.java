@@ -14,6 +14,9 @@ public interface BoardService {
 	// register
 	public void regist(BoardVO vo) throws Exception;
 
-	// getList
+	// getBoardList
 	public List<BoardVO> getList() throws Exception;
+
+	// getBoard
+	public BoardVO getBoard(Integer bno) throws Exception;
 }

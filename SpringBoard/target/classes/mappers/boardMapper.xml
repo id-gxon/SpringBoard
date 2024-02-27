@@ -9,6 +9,10 @@
 	</insert>
 
 	<select id="selectBoardList" resultType="BoardVO">
-		Select * FROM tbl_board ORDER BY regdate DESC
+		SELECT * FROM tbl_board ORDER BY regdate DESC
+	</select>
+
+	<select id="selectBoard" resultType="BoardVO">
+		SELECT * FROM tbl_board WHERE bno=#{bno}
 	</select>
 </mapper>
