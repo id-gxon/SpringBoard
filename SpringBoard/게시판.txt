@@ -106,3 +106,16 @@
 * @ModelAttribute vs @RequestParam
 	-@ModelAttribute: 파라메터 저장 + 영역 저장(1:N 관계)
 	-@RequestParam	: 파라메터 저장(1:1 관계)
+
+* AOP(Aspect Oriented programming): 관점 지향 프로그래밍
+	- 개발자는 핵심 로직에만 집중하고, 나머지는 스프링이 알아서 처리
+	- 나머지 -> 보안, 트랜젝션, 로깅, 예외 처리
+	
+	= 주 기능과 보조 기능으로 분리 후 주 기능을 직접 구현하도록 만들어진 구조
+	
+	# Aspect	: 구현하고자 하는 보조 기능
+	# Advice	: Aspect의 실제 구현체(Class)
+	# Joinpoint	: Advice를 적용하는 지점(Method 호출)
+	# Pointcut	: Advice가 적용되는 대상
+	# Target	: Advice가 적용되는 Class
+	# Weaving	: Advice를 주 기능에 적용하는 것
