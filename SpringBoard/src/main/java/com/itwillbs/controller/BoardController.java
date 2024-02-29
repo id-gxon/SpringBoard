@@ -3,6 +3,7 @@ package com.itwillbs.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,7 +50,7 @@ public class BoardController {
 
 	// http://localhost:8088/board/list
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public void listGET(Model model) throws Exception {
+	public void listGET(Model model, HttpSession session) throws Exception {
 		logger.debug("/board/list -> listGET() 호출");
 		logger.debug("/board/list.jsp View 연결");
 
@@ -59,21 +60,66 @@ public class BoardController {
 
 		// 연결된 뷰에 정보 전달
 		model.addAttribute(boardList);
+
+		session.setAttribute("viewUpdateStatus", 1);
 	}
 
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
-	public void readGET(Model model, @RequestParam("bno") int bno) throws Exception {
+	public void readGET(Model model, @RequestParam("bno") int bno, HttpSession session) throws Exception {
 		logger.debug("/board/read -> readGET() 호출");
 		logger.debug("/board/read.jsp View 연결");
-		
+
 		// 전달 정보 저장
 		logger.debug("bno:" + bno);
-		
+
+		if (((Integer) session.getAttribute("viewUpdateStatus")).equals(1)) {
+			session.setAttribute("viewUpdateStatus", 0);
+
+			// Service -> DAO 게시판 글 조회수 1 증가
+			bService.updateViewcnt(bno);
+		}
+
 		// Service -> DAO 게시판 글 조회 가져오기
-		BoardVO bvo = bService.getBoard(bno);
-		
+		BoardVO bvo = bService.read(bno);
+
 		// 해당 정보를 저장 -> 연결된 뷰로 전달
 		model.addAttribute(bvo);
+	}
+
+	@RequestMapping(value = "/modify", method = RequestMethod.GET)
+	public void modifyGET(Model model, @RequestParam("bno") int bno) throws Exception {
+		logger.debug("/board/modify -> modifyGET() 호출");
+		logger.debug("/board/modify.jsp View 연결");
+
+		// 전달 정보 저장(bno)
+		logger.debug("bno: " + bno);
+
+		// 연결된 뷰에 전달(Model)
+		model.addAttribute(bService.read(bno));
+	}
+
+	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	public String modifyPOST(BoardVO vo) throws Exception {
+
+		// 전달 정보 저장(bno, title, content, writer)
+		logger.debug("BoardVO" + vo);
+
+		// Service -> DAO 게시판 글 정보 수정
+		bService.modify(vo);
+
+		return "redirect:/board/list";
+	}
+
+	@RequestMapping(value = "/remove", method = RequestMethod.POST)
+	public String removePOST(@RequestParam("bno") int bno) throws Exception {
+
+		// 전달 정보 저장(bno)
+		logger.debug("bno: " + bno);
+
+		// Service -> DAO 게시판 글 정보 삭제
+		bService.remove(bno);
+
+		return "redirect:/board/list";
 	}
 
 }

@@ -4,6 +4,16 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.itwillbs.mapper.BoardMapper">
+	<!-- 테이블 정보 설정 -->
+	<resultMap type="com.itwillbs.domain.BoardVO" id="board">
+		<result property="bno" column="bno" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="writer" column="writer" />
+		<result property="viewcnt" column="viewcnt" />
+		<result property="regdate" column="regdate" />
+	</resultMap>
+
 	<insert id="createBoard">
 		INSERT INTO tbl_board(title, writer, content) VALUES(#{title}, #{writer}, #{content})
 	</insert>
@@ -12,7 +22,19 @@
 		SELECT * FROM tbl_board ORDER BY regdate DESC
 	</select>
 
-	<select id="selectBoard" resultType="BoardVO">
+	<select id="selectBoard" resultType="BoardVO" resultMap="board">
 		SELECT * FROM tbl_board WHERE bno=#{bno}
 	</select>
+
+	<update id="updateViewcnt">
+		UPDATE tbl_board SET viewcnt=viewcnt+1 WHERE bno=#{bno}
+	</update>
+
+	<update id="updateBoard">
+		UPDATE tbl_board SET title=#{title}, content=#{content}, writer=#{writer} WHERE bno=#{bno}
+	</update>
+
+	<delete id="deleteBoard">
+		DELETE FROM tbl_board WHERE bno=#{bno}
+	</delete>
 </mapper>

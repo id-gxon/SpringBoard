@@ -18,5 +18,14 @@ public interface BoardService {
 	public List<BoardVO> getList() throws Exception;
 
 	// getBoard
-	public BoardVO getBoard(Integer bno) throws Exception;
+	public BoardVO read(Integer bno) throws Exception;
+
+	// viewcnt +1
+	public void updateViewcnt(Integer bno) throws Exception;
+
+	// modify
+	public void modify(BoardVO vo) throws Exception;
+
+	// remove
+	public void remove(Integer bno) throws Exception;
 }
