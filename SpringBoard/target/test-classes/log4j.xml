@@ -14,24 +14,22 @@
 	<logger name="com.itwillbs.controller">
 		<level value="debug" />
 	</logger>
-
-	<logger name="com.itwillbs.persistence">
+		<logger name="com.itwillbs.service">
 		<level value="debug" />
 	</logger>
-
-	<logger name="com.itwillbs.service">
+	<logger name="com.itwillbs.persistence">
 		<level value="debug" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
 		<level value="info" />
-	</logger>
-
+	</logger>	
+	
 	<logger name="org.springframework.beans">
 		<level value="info" />
 	</logger>
-
+	
 	<logger name="org.springframework.context">
 		<level value="info" />
 	</logger>
@@ -45,5 +43,5 @@
 		<priority value="info" />
 		<appender-ref ref="console" />
 	</root>
-
+	
 </log4j:configuration>

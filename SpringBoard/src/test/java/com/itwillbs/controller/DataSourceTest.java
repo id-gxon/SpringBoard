@@ -14,20 +14,41 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/root-context.xml" })
+@ContextConfiguration(
+		locations = {"file:src/main/webapp/WEB-INF/spring/root-context.xml"}
+		)
 public class DataSourceTest {
-
-	private static final Logger logger = LoggerFactory.getLogger(DataSourceTest.class);
-
-	// DB 연결 정보 저장 객체
+	
+	// 디비연결 정보저장 객체
 	@Inject
 	private DataSource ds;
-
+	
+	
+	private static final Logger logger = LoggerFactory.getLogger(DataSourceTest.class);
+	
 	@Test
-	public void 테스트() throws SQLException {
-		logger.debug("ds: " + ds);
-
-		Connection con = ds.getConnection();
-		logger.debug("con: " + con);
+	public void 테스트() {
+		logger.debug(" ds : "+ds);		
+		
+		try {
+			Connection con = ds.getConnection();
+			
+			logger.debug(" con : "+con);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
 }

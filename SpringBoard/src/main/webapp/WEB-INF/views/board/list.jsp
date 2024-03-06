@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../include/header.jsp"%>
 
+<%-- ${boardList.size() } --%>
+viewUpdateStatus : ${viewUpdateStatus }
 <div class="content">
+
 	<div class="box">
 		<div class="box-header with-border">
 			<h3 class="box-title">게시판 목록</h3>
@@ -20,20 +22,23 @@
 						<th style="width: 40px">viewcnt</th>
 						<th>regdate</th>
 					</tr>
-
-					<c:forEach var="bList" items="${boardVOList }">
+					
+					<c:forEach var="bVO" items="${boardList }">
 						<tr>
-							<td>${bList.bno }</td>
-							<td><a href="/board/read?bno=${bList.bno }">${bList.title }</a></td>
-							<td>${bList.writer }</td>
+							<td>${bVO.bno }</td>
 							<td>
-								<span class="badge bg-red">${bList.viewcnt }</span>
+								<a href="/board/read?bno=${bVO.bno }">${bVO.title }</a>
 							</td>
 							<td>
-								<fmt:formatDate value="${bList.regdate }" pattern="yy.MM.dd" />
+								${bVO.writer }
+							</td>
+							<td><span class="badge bg-red">${bVO.viewcnt }</span></td>
+							<td>
+							   <fmt:formatDate value="${bVO.regdate }" pattern="yy.MM.dd"/> 
 							</td>
 						</tr>
 					</c:forEach>
+				
 				</tbody>
 			</table>
 		</div>
@@ -48,6 +53,8 @@
 			</ul>
 		</div>
 	</div>
+
 </div>
+
 
 <%@ include file="../include/footer.jsp"%>
