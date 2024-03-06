@@ -3,29 +3,39 @@ package com.itwillbs.persistence;
 import java.util.List;
 
 import com.itwillbs.domain.BoardVO;
+import com.itwillbs.domain.Criteria;
 
 /**
- * Service - MyBatis(mapper) 연결 객체
- * 
- * Query 호출
+ *   서비스 - Mybatis(mapper) 연결하는 객체	
+ *   
+ *   사용되는 쿼리구문을 호출
  */
+
 public interface BoardDAO {
-
-	// registerBoard
+	
+	// 글쓰기
 	public void boardCreate(BoardVO vo) throws Exception;
-
-	// selectBoardList
+	
+	// 글 목록 조회
 	public List<BoardVO> boardListSelect() throws Exception;
-
-	// selectBoard
+	
+	// 글 내용 조회
 	public BoardVO boardSelect(Integer bno) throws Exception;
-
-	// updateViewcnt
-	public void viewcntUpdate(Integer bno) throws Exception;
-
-	//updateBoard
+	
+	// 글 조회수 1증가
+	public void boardViewcntUpdate(int bno) throws Exception;
+	
+	// 글 내용 수정
 	public void boardUpdate(BoardVO vo) throws Exception;
+	
+	// 글 내용 삭제
+	public void boardDelete(int bno) throws Exception;
+	
+	// 글 목록 조회(페이징)
+	public List<BoardVO> boardListPageSelect(int page) throws Exception;
 
-	//deleteBoard
-	public void boardDelete(Integer bno) throws Exception;
+	// 글 목록 조회(페이징-Cri)
+	public List<BoardVO> boardListCriSelect(Criteria cri) throws Exception;
+	
+
 }
